@@ -3,7 +3,19 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="{{ asset('css/styles/BEM blocks/header/header.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/styles/styles_i.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/styles/styles_p.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/styles/BEM blocks/primary-font/primary-font.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/styles/banner.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/styles/BEM blocks/footer/footer.css')}}">
+    <!-- Используем современный шрифт -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet"> 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -19,25 +31,20 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <!-- <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a> -->
-                <h1 class="logo">QuickHan<span class="greencolor">d</span>s</h1>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
+        <nav class="header__panel header__panel--mid">
+            <div class="header__panel-main header__panel-main--mid">
+                <div class="header__panel-block-btn">
+                <a class="header__panel-btn__logo" href="/"> 
+                    <img  src="{{ asset('images/logo.jpg')}}" alt="" height="30" width="30"> 
+                    <img  src="{{ asset('images/line.svg')}}" alt="" height="30" width="30"> 
+                    <p class="logo__text" href="/about"> физика <br> - это просто </p>
+                </a>
+                </div>
+                <div class="header__panel-block-btn"><a class="header__panel-btn primary-font mobile-none" href="/about"> О нас </a></div>
+                <div class="header__panel-block-btn"><a class="header__panel-btn primary-font mobile-none" href="/pay">Купить курс </a></div>
+                <div class="header__panel-block-btn"><a class="header__panel-btn primary-font mobile-none" href="/course"> Информация </a></div>
+                <div class="header__panel-block-btn"><a class="header__panel-btn primary-font mobile-none" href="/profile"> Профиль </a></div>
+<ul class="navbar-nav">
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
@@ -73,8 +80,7 @@
                             </li>
                         @endguest
                     </ul>
-                </div>
-            </div>
+
         </nav>
 
         <main class="py-4">

@@ -1,0 +1,33 @@
+.rights {
+    font-size: 1vw;
+    color: white;
+}
+
+.footer {
+    background-color: #8d46f6;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 10vw;
+}
+.container {
+    max-width: 100%;
+    width: 100%;
+    /* margin: auto; */
+}
+.footer__column{
+    gap: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer__secure{
+    margin-top: 10px;
+    font-size: .8vw;
+    border: 0;
+    color: aliceblue;
+    transition: all .3s;
+}
+.footer__secure:hover{
+    color: rgb(26, 26, 26);
+}

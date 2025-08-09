@@ -1,0 +1,180 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.profile_icon {
+    height: 18vw;
+    width: auto;
+    margin-top: 5vw;
+    margin-right: 10vw;
+    margin-bottom: 5vw;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.cell {
+    width: 20vw;
+    height: auto;
+    padding: 0.5vw;
+    margin: 0.5vw;
+    border: 0.3vw;
+    border-style: solid;
+    border-color: rgb(179, 41, 197);
+    border-radius: 0.5vw;
+    font-size: 1vw;
+}
+
+.secure {
+    border: 0;
+    color: rgba(14, 14, 14, 0.512);
+    /* color: black;
+    border-color: rgba(98, 100, 123, 0.415); */
+    margin-top: 3vw;
+    margin-bottom: -2.5vw;
+    margin-left: -1.5vw;
+}
+
+.table {
+    height: auto;
+    display: flex;
+    /* margin-top: 10vw; */
+    margin-top: 4.5vw;
+    margin-left: 10vw;
+    margin-bottom: 4.5vw;
+}
+
+.inline_block {
+    display: flex;
+    flex-direction: row;
+}
+
+.course {
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 10vw;
+    font-size: 2vw;
+    background-color:#f4f5fa;
+    border-color: transparent;
+    border-radius: 2vw;
+    text-align: center;
+}
+
+.my_course {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3vw;
+}
+
+/* Сомнительный контент далее */
+
+
+.course-block {
+  max-width: 100vw; 
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 16px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+
+.progress-container {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding-bottom: 10px;
+}
+
+
+.steps {
+  list-style: none;
+  display: inline-flex;
+  /* gap: 15px;  */
+  position: relative;
+  height: 50px;
+  width: fit-content; 
+  text-align: center;
+}
+
+.step::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background-color: rgb(179, 41, 197); 
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+.step {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 150px; 
+}
+
+.step > small {
+  font-size: 14px;
+  color: #777;
+  margin-top: 5px;
+}
+
+.step > span {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid rgb(75, 75, 75);
+  position: relative;
+  cursor: default;
+  z-index: 1;
+}
+
+.completed > span {
+  background-color: rgb(179, 41, 197);
+}
+
+.current > span {
+  background-color: yellowgreen;
+}
+
+.remaining > span {
+  background-color: aliceblue;
+}
+
+
+.steps li:first-child::before,
+.steps li:last-child::after {
+  display: none;
+}
+
+
+.progress-bar div.small {
+  opacity: 0.8;
+  font-weight: normal;
+  font-size: 14px;
+}

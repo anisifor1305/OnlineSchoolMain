@@ -1,0 +1,185 @@
+.style1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 4%;
+    margin-left: 2%;
+    gap:5%;
+    background-color: rgb(229, 255, 192);
+    /* background-image: url("https://bogatyr.club/uploads/posts/2023-03/34938/1679446237_bogatyr-club-p-tsianovii-tsvet-foni-vkontakte-32.jpg"); */
+    width: 96%;
+    height: 730px;
+    background-size: cover;
+    align-items: center;
+    border-radius: 50px;
+}
+.cardplace{
+    width:40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.photoplace{
+    width: 40%;
+    height: auto;
+}
+.banner-text-main {
+    font-family: "Oswald", sans-serif;
+    font-size: 8vh;
+    color: rgb(0, 0, 0);
+    font-weight: 400;
+    text-align: right;
+    max-width: 97vh;
+    
+}
+
+ .lit-banner-text {
+    font-family:"Onest", sans-serif;
+    font-size: 24px;
+    color: rgb(6, 12, 12);
+    font-weight: 300;
+    text-align: center;
+} 
+
+.image-iliya {
+    position: absolute;
+    width: 25vw;
+    height: 25vw;
+    border-radius: 40px;
+    border-style: solid;
+    border-color: transparent;
+    border-width: 10px;
+    z-index: 1;
+}
+
+.image {
+    position: absolute;
+    width: 10%;
+    height: 20%;
+    /* left: 45vh;
+    bottom: 8vh; */
+    /* z-index: 2; */
+    /* transform:rotate(45deg) ; */
+}
+.resistor{
+    z-index:4;
+    transform:rotate(45deg) ;
+
+}
+.resistordiv{
+    margin-left: 20vw;
+}
+
+.light {
+    transform:rotate(-30deg) ;
+    z-index: 2;
+}
+
+.lightdiv{
+    margin-left: -2vw;
+}
+
+.ball {
+    width: 8vw;
+    height: auto;
+    z-index: 3;
+    transform:rotate(45deg) ;
+}
+.balldiv{
+    margin-top: 20vw;
+    margin-left: 20vw;
+}
+.gear {
+    z-index: 0;
+    transform:rotate(45deg) ;
+}
+.geardiv{
+    margin-left: -2vw;
+    margin-top: 20vw;
+}
+
+.button {
+    height: 15vh;
+    width: 50vh;
+    border-radius: 3vh;
+    border-color: transparent;
+    background-color: black;
+    color: azure;
+    font-size: 5vh;
+    margin-top: 10vh;
+}
+
+.button:hover {
+    background-color: rgb(229, 255, 192);
+    color: black;
+    border: 0.5vh;
+    border-style: solid;
+}
+
+@media (max-width: 427px) {
+    .style1 {
+        flex-direction: column;
+        height: 125vh;
+    }
+    .image-iliya {
+        width: 81%;
+        height: auto;
+        margin-left: -22%;
+        margin-top: -5%;
+    }
+    .banner-text-main {
+        margin-top: 50vh;
+        margin-bottom: 5vh;
+        width: 60vh;
+        font-size: 5vh;
+        text-align: center;
+    }
+     .lit-banner-text {
+       width: 60vh;
+    } 
+    .image {
+        width: 35vw;
+        height: auto;
+    }
+    .ball {
+        width: 21vw;
+        height: auto;
+    }
+    .balldiv {
+        position: absolute;
+        margin-top: 60vw;
+        margin-left: 40vw;
+    }
+    .gear {
+        width: 28vw;
+        height: auto;
+    }
+    .geardiv {
+        position: absolute;      
+        margin-top: 60vw;
+        margin-left: -31vw;
+    }
+    .light {
+
+    }
+    .lightdiv {
+        position: absolute;      
+        margin-top: -15vw;
+        margin-left: -32vw;
+    }
+    .resistor {
+
+    }
+    .resistordiv {
+        position: absolute;    
+        margin-top: -15vw;
+        margin-left: 31vw;
+    }
+    .button {
+        width: 80vw;
+        font-size: 10vw;
+    }
+}
+

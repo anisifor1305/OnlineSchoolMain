@@ -33,16 +33,15 @@ class UserController extends Controller
         $passport_data = $user->passport_data;
         $about = $user->about;
         $balance = $user->balance;
-        $user_advs = Advert::where('owner_id', $user->id)->get();
-        $user_FLPubs = FLPub::where('owner_id', $user->id)->get();
-        if (count($user_advs)==0){
-            $user_advs = null;
-        }
-        if (count($user_FLPubs)==0){
-            $user_FLPubs = null;
-        }
-        return view('personalProfile', ['firstname'=>$firstname, 'lastname'=>$lastname, 'passport_data'=>$passport_data, 'about'=>$about, 'balance'=>$balance,
-    'FLPubs'=>$user_FLPubs, 'advs'=>$user_advs]);
+        // $user_advs = Advert::where('owner_id', $user->id)->get();
+        // $user_FLPubs = FLPub::where('owner_id', $user->id)->get();
+        // if (count($user_advs)==0){
+        //     $user_advs = null;
+        // }
+        // if (count($user_FLPubs)==0){
+        //     $user_FLPubs = null;
+        // }
+        return view('personalProfile', ['firstname'=>$firstname, 'lastname'=>$lastname, 'passport_data'=>$passport_data, 'about'=>$about, 'balance'=>$balance]);
 
     }
     function banUser(Request $request) {

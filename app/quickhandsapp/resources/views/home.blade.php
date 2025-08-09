@@ -1,19 +1,24 @@
 @extends('layouts.app')
 
 @section('content')
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Фриланс Биржа</title>
-        <link rel="stylesheet" href="styles.css">
-        <!-- Используем современный шрифт -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
-    </head>
-    <script>
-        let balance= '{{ $balance }}'
-    </script>
-    <div id="main-home" balance='{{$balance}}'></div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="{{ asset('css/styles/BEM blocks/header/header.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/styles/styles_i.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/styles/styles_p.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/styles/BEM blocks/primary-font/primary-font.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/styles/banner.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/styles/BEM blocks/footer/footer.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet"> 
+    <title>Фриланс Биржа</title>
+</head>
+<script>
+    let balance= '{{ $balance }}'
+</script>
+<div id="main-home" balance='{{$balance}}'></div>
     
 @endsection
