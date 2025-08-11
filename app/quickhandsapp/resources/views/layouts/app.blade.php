@@ -43,10 +43,15 @@
                 <div class="header__panel-block-btn"><a class="header__panel-btn primary-font mobile-none" href="/about"> О нас </a></div>
                 <div class="header__panel-block-btn"><a class="header__panel-btn primary-font mobile-none" href="/pay">Купить курс </a></div>
                 <div class="header__panel-block-btn"><a class="header__panel-btn primary-font mobile-none" href="/course"> Информация </a></div>
+                @guest
+                <a class="header__panel-btn primary-font mobile-none" href="{{ route('login') }}">{{ __('Войти') }}</a>
+                <a class="header__panel-btn primary-font mobile-none" href="{{ route('register') }}">{{ __('Регистрация') }}</a>
+                @else
                 <div class="header__panel-block-btn"><a class="header__panel-btn primary-font mobile-none" href="/profile"> Профиль </a></div>
-<ul class="navbar-nav">
+                @endguest
+                <ul class="navbar-nav">
                         @guest
-                            @if (Route::has('login'))
+                            <!-- @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
@@ -56,16 +61,16 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
-                            @endif
+                            @endif -->
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                                    {{ Auth::user()->firstname }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('profile') }}"> Профиль</a>>
-                                    <a class="dropdown-item" href="{{ route('chats') }}"> Чаты</a>>
+                                    <a class="dropdown-item" href="{{ route('chats') }}"> Вопрос преподавателю</a>>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -79,7 +84,7 @@
                                 
                             </li>
                         @endguest
-                    </ul>
+               </ul>
 
         </nav>
 

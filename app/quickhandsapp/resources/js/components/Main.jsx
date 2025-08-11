@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import '../../css/app.css';
 import ChatBox from "./ChatBox.jsx";
 import HomePage from './HomePage.jsx';
-
+import Profile from './Profile.jsx';
 if (document.getElementById('main')) {
     const rootUrl = "http://127.0.0.1:8000"; 
 
@@ -20,6 +20,17 @@ if (document.getElementById('main-home')) {
         ReactDOM.createRoot(document.getElementById('main-home')).render(
         <React.StrictMode>
             <HomePage/>
+        </React.StrictMode>
+    );
+}
+
+if (document.getElementById('main-profile')) {
+    console.log('jopa');
+    const component = document.getElementById('main-profile');
+    const props = Object.assign({}, component.dataset);
+        ReactDOM.createRoot(document.getElementById('main-profile')).render(
+        <React.StrictMode>
+            <Profile/>
         </React.StrictMode>
     );
 }
