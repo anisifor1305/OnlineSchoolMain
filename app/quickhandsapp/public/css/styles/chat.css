@@ -1,0 +1,144 @@
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fafafa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    width: 100%;
+    max-width: 700px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    z-index: 1;
+}
+
+.card .card-header,
+.card .card-footer {
+    background-color: #ffffff;
+    color: #333;
+    font-size: 1.2rem;
+    text-align: left;
+    padding: 16px 24px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+}
+
+.card .card-body {
+    padding: 16px 24px;
+    background-color: #ffffff;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    height: calc(100% - 88px); /* Высота заголовка + футера = 88px */
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #ccc transparent;
+}
+
+/* Custom scrollbars for modern browsers */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+.message {
+    display: inline-block;
+    clear: both;
+    word-break: break-word;
+    white-space: pre-wrap;
+    line-height: 1.4;
+    margin-bottom: 16px;
+    font-size: 1rem;
+    color: #333;
+    position: relative;
+    padding: 8px 16px;
+    border-radius: 16px;
+    max-width: 70%;
+}
+
+.user-message {
+    float: right;
+    background-color: #dcf8c6;
+    margin-left: auto;
+    animation: fadeInRight 0.3s ease-in-out;
+}
+
+.bot-message {
+    float: left;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+    animation: fadeInLeft 0.3s ease-in-out;
+}
+
+@keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-10px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(10px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+.card-footer {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 24px;
+    border-top: 1px solid #eee;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+input[type='text'] {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    background-color: #fafafa;
+    color: #333;
+    transition: background-color 0.3s ease-in-out;
+}
+
+input[type='text']:focus {
+    background-color: #fff;
+}
+
+button {
+    cursor: pointer;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #4a90e2;
+    color: #fff;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #3b7dda;
+}

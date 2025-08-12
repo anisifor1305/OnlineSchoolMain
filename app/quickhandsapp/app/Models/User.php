@@ -23,11 +23,9 @@ class User extends Authenticatable
         'firstname',
         'lastname',
         'is_admin',
-        'balance',
-        'passport_data',
-        'count_adv',
         'status',
         'banned',
+        'courses',
     ];
 
     /**

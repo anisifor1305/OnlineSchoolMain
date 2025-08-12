@@ -45,3 +45,10 @@ Route::get('/messages/{id}', [ChatController::class, 'messages'])
 Route::post('/message/{id}', [ChatController::class, 'message'])
     ->name('message')->middleware(isAuthed::class);
 Route::post('/newcourse', [CourseController::class, 'newCourse'])->middleware(isAuthed::class);
+Route::get('/setcourse/{id}', [App\Http\Controllers\CPanelController::class, 'setCourse'])->middleware(isAuthed::class);
+Route::get('/about', function(){
+    return view('about');
+})->name('about');
+Route::get('/pay', function(){
+    return view('defaultError');
+})->name('pay');

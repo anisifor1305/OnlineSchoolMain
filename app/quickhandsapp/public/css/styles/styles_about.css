@@ -1,0 +1,146 @@
+/* Минималистичный бело-фиолетовый дизайн */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li{
+    text-align: left;
+}
+p{
+    text-align: left;
+}
+h1{
+    text-align: start;
+}
+h2{
+    text-align: start;
+}
+body {
+    font-family: "Onest", sans-serif;
+    line-height: 1.6;
+    background-color: #ffffff;
+    color: #333;
+}
+
+.header {
+    background-color: #ededed;
+    padding: 15px 0;
+}
+.maintitle {
+    margin-bottom: 20px;
+    padding-left: 20px;
+    width: 60%;
+    color: #8d46f6;
+    background-color: #8d46f6;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 5%;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo img {
+    max-width: 100px;
+}
+
+.menu ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.menu li a {
+    color: #666;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: color 0.3s ease;
+}
+
+.menu li a:hover {
+    color:  #8d46f6;
+}
+
+.about-section, .services-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.about-section h1, .services-section h2 {
+    font-size: 2.5rem;
+    color:  #8d46f6;
+    margin-bottom: 20px;
+}
+
+.services-section ul {
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+.services-section li {
+    margin-bottom: 10px;
+}
+
+
+/* Адаптация для планшета (портретная ориентация) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .navbar {
+        padding: 10px 15px;
+    }
+
+    .menu ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .menu li {
+        margin: 5px;
+    }
+
+    .about-section h1, .services-section h2 {
+        font-size: 2rem;
+    }
+
+    .about-section, .services-section {
+        padding: 40px 15px;
+    }
+}
+
+/* Адаптация для смартфонов */
+@media (max-width: 767px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo img {
+        margin-bottom: 10px;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu li {
+        margin: 5px 0;
+    }
+
+    .about-section h1, .services-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .about-section, .services-section {
+        padding: 30px 15px;
+    }
+
+    .footer address {
+        font-size: 0.9rem;
+    }
+}

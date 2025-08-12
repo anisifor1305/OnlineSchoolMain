@@ -31,3 +31,12 @@
 .footer__secure:hover{
     color: rgb(26, 26, 26);
 }
+
+@media (max-width: 800px) {
+    .rights {
+        font-size: 3vw;
+    }
+    .footer__secure{
+        font-size: 3vw;
+    }
+}

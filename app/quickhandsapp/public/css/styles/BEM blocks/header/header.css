@@ -1,3 +1,7 @@
+body, html {
+    overflow-x: hidden; /* Убираем горизонтальную прокрутку */
+}
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -8,12 +12,15 @@
     width: 100%;
     user-select: none;
 }
+.burger{
+    margin-left: 5px;
+}
 
 .header__panel {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
+    /* height: 100%; */
     width: 40%;
 }
 
@@ -57,7 +64,9 @@
 
 .header__panel-main {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding-right: 2vw;
+    padding-left: 2vw;
     align-items: center;
     background-color: #fafafa;
     height: 100%;
@@ -183,7 +192,7 @@
 }
 
 .header__panel-main--mid {
-    justify-content: space-around;
+    justify-content: space-between;
     /* border-radius: 0% 0% 15px 15px; */
 }
 
@@ -246,7 +255,6 @@
     border-color: #c1c1c1;
     filter: invert();
 }
-
 .header__panel-btn--home {
     color: #fafafa;
     font-weight: 300!important;
@@ -257,7 +265,62 @@
 
 
 
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+.dropdown-content {
+    right: 15px;
+    visibility: hidden;    
+    opacity: 0;   
+    transform: translateY(-10px);  
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    width: max-content;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-top: 10px;
+    z-index: 1;
+}
+
+.dropdown_a {
+    display: block;
+    padding: 10px 16px;
+    text-decoration: none;
+    color: #333;
+}
+.mobile_on{
+    display: none;
+    padding: 10px 16px;
+    text-decoration: none;
+    color: #333;
+}
+
+
+.dropdown_a:hover {
+    background-color: #f0f0f0;
+}
+.mobile_on:hover{
+    background-color: #f0f0f0;
+}
+
+.dropdown:hover .dropdown-content {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0); 
+}
+
+
+
 @media (max-width: 800px) {
+    .dropdown-content{
+        right: 0px;
+    }
     .header__panel-btn {
         font-size: 1rem;
     }
@@ -267,7 +330,13 @@
     }
 }
 
-@media (max-width: 570px) {
+@media (max-width: 690px) {
+    .mobile_on{
+        display: block;
+    }
+    .mobile-none {
+        display: none;
+    }
     .header {
         flex-wrap: wrap;
     }
@@ -298,5 +367,6 @@
 @media (max-width: 427px) {
     .header__panel-btn--right {
         margin-right: 35vw;
+        
     }
 }

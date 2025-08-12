@@ -17,18 +17,11 @@
     <title>Фриланс Биржа</title>
 </head>
 <script>
-    let firstname= '{{ $firstname }}';
-    let lastname= '{{ $lastname }}';
+    const firstname= '{{ $firstname }}';
+    const lastname= '{{ $lastname }}';
+    // let steps = '{{ $steps }}' 
 </script>
-<div id="main-profile" ></div>
+<div id="main-profile" coursesInfo='{{ $coursesInfo }}' stepNumbers='{{$steps}}'></div>
     
 @endsection
 
-<!-- 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-        const completed = 9;
-        const targetElement = document.getElementById('scrollPlace');
-        targetElement.scrollLeft = 150*completed;
-    });
-    </script> -->

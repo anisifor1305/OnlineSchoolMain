@@ -14,11 +14,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet"> 
-    <title>Фриланс Биржа</title>
+    <title>Онлайн-школа</title>
 </head>
-<script>
+<!-- <script>
     let balance= '{{ $balance }}'
-</script>
+</script> -->
 <div id="main-home" balance='{{$balance}}'></div>
     
 @endsection

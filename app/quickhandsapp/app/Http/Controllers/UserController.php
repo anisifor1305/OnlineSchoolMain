@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Advert;
+use App\Models\Course;
 use App\Models\FLPub;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -30,18 +31,25 @@ class UserController extends Controller
         $user = User::where('id', auth()->id())->first();
         $firstname = $user->firstname;
         $lastname = $user->lastname;
-        $passport_data = $user->passport_data;
-        $about = $user->about;
-        $balance = $user->balance;
-        // $user_advs = Advert::where('owner_id', $user->id)->get();
-        // $user_FLPubs = FLPub::where('owner_id', $user->id)->get();
-        // if (count($user_advs)==0){
-        //     $user_advs = null;
-        // }
-        // if (count($user_FLPubs)==0){
-        //     $user_FLPubs = null;
-        // }
-        return view('personalProfile', ['firstname'=>$firstname, 'lastname'=>$lastname, 'passport_data'=>$passport_data, 'about'=>$about, 'balance'=>$balance]);
+        $courses = json_decode($user->courses);
+        $coursesInfo = [];
+        if ($courses){
+            foreach ($courses as $course) {
+                $currentCourse = Course::where('id', $course)->first();
+                $courseInfo = array();
+                array_push($courseInfo, $currentCourse->id);
+                array_push($courseInfo, $currentCourse->name);
+                array_push($courseInfo, $currentCourse->lore);
+                array_push($courseInfo, $currentCourse->steps);
+                array_push($coursesInfo, $courseInfo);
+            }
+        }
+        else {
+            $coursesInfo = null;
+        }
+        $steps = $user->steps;
+        $coursesInfo = json_encode($coursesInfo);
+        return view('personalProfile', ['firstname'=>$firstname, 'lastname'=>$lastname, 'steps'=>$steps, 'coursesInfo'=>$coursesInfo]);
 
     }
     function banUser(Request $request) {

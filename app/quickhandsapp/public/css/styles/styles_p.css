@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
 }
+
 .profile_icon {
     height: 18vw;
     width: auto;
@@ -25,7 +26,7 @@
     margin: 0.5vw;
     border: 0.3vw;
     border-style: solid;
-    border-color: rgb(179, 41, 197);
+    border-color: #8d46f6;
     border-radius: 0.5vw;
     font-size: 1vw;
 }
@@ -54,6 +55,7 @@
     flex-direction: row;
 }
 
+
 .course {
     font-weight: 500;
     display: flex;
@@ -62,7 +64,7 @@
     width: 80%;
     height: 10vw;
     font-size: 2vw;
-    background-color:#f4f5fa;
+    background-color: #ebedf7;
     border-color: transparent;
     border-radius: 2vw;
     text-align: center;
@@ -101,7 +103,7 @@
 
 
 .progress-container {
-  overflow-x: scroll;
+  overflow-x: scroll !important;
   overflow-y: hidden;
   white-space: nowrap;
   padding-bottom: 10px;
@@ -125,7 +127,7 @@
   left: 0;
   right: 0;
   height: 10px;
-  background-color: rgb(179, 41, 197); 
+  background-color: #8d46f6; 
   transform: translateY(-50%);
   z-index: 0;
 }
@@ -155,7 +157,7 @@
 }
 
 .completed > span {
-  background-color: rgb(179, 41, 197);
+  background-color: #8d46f6;
 }
 
 .current > span {
@@ -172,9 +174,40 @@
   display: none;
 }
 
+.progress-bar{
+  overflow:visible !important;
+}
 
 .progress-bar div.small {
   opacity: 0.8;
   font-weight: normal;
   font-size: 14px;
+}
+
+@media (max-width: 800px) {
+  .icon-container{
+    display: none;
+  }
+  .course{
+    font-size: 24px;
+  }
+  .table{
+    width: 100%;
+    height: 50vw;
+    margin-left: 0;
+    flex-direction: column;
+  }
+  .column{
+    width: 90vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+  .column__pc{
+    display: none;
+  }
+  .cell{
+    border-radius: 10px;
+    font-size: 3vw;
+    width: 90vw;
+  }
 }

@@ -25,12 +25,12 @@ if (document.getElementById('main-home')) {
 }
 
 if (document.getElementById('main-profile')) {
-    console.log('jopa');
+
     const component = document.getElementById('main-profile');
     const props = Object.assign({}, component.dataset);
         ReactDOM.createRoot(document.getElementById('main-profile')).render(
         <React.StrictMode>
-            <Profile/>
+            <Profile stepNumbers={component.getAttribute('stepNumbers')} coursesInfo={component.getAttribute('coursesinfo')}/>
         </React.StrictMode>
     );
 }

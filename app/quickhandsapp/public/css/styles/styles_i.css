@@ -27,7 +27,7 @@
 }
 
 .maintitle {
-    width: 60%;
+    width: 80% !important;
     color: #8d46f6;
     background-color: #8d46f6;
     text-align: center;
@@ -256,6 +256,7 @@
     text-decoration-style: solid;
     margin-left: 4vw;
     margin-bottom: 4vw;
+    width: 48vw;
 }
 .cardtext__ol{
     margin-top: 2vw;
@@ -269,8 +270,9 @@
 }
 .cardhead{
     text-align: left;
-    font-size: auto;
-    font-family: Oswald, sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: "Oswald", sans-serif;
     color: #333;
     margin-left: 4vw;
     margin-top: 4vw;

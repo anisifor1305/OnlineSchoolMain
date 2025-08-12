@@ -40,52 +40,37 @@
                     <p class="logo__text" href="/about"> физика <br> - это просто </p>
                 </a>
                 </div>
-                <div class="header__panel-block-btn"><a class="header__panel-btn primary-font mobile-none" href="/about"> О нас </a></div>
+                <!-- <div class="header__panel-block-btn"><a class="header__panel-btn primary-font mobile-none" href="/about"> О нас </a></div> -->
                 <div class="header__panel-block-btn"><a class="header__panel-btn primary-font mobile-none" href="/pay">Купить курс </a></div>
-                <div class="header__panel-block-btn"><a class="header__panel-btn primary-font mobile-none" href="/course"> Информация </a></div>
+                <div class="header__panel-block-btn"><a class="header__panel-btn primary-font mobile-none" href="/about"> Информация </a></div>
                 @guest
                 <a class="header__panel-btn primary-font mobile-none" href="{{ route('login') }}">{{ __('Войти') }}</a>
                 <a class="header__panel-btn primary-font mobile-none" href="{{ route('register') }}">{{ __('Регистрация') }}</a>
                 @else
                 <div class="header__panel-block-btn"><a class="header__panel-btn primary-font mobile-none" href="/profile"> Профиль </a></div>
                 @endguest
-                <ul class="navbar-nav">
-                        @guest
-                            <!-- @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
 
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif -->
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->firstname }}
-                                </a>
+                @guest
+                @else
+                <div class="dropdown">
+                    <a class="header__panel-btn primary-font">{{ Auth::user()->firstname }} <img class="burger" src="{{ asset('images/hamburger-menu.svg')}}" alt="" height="30" width="30"> </a>
+                    <div class="dropdown-content">
+                        <a class="dropdown_a"href="{{ route('profile') }}"> Профиль</a>
+                        <a class="dropdown_a"href="{{ route('chats') }}"> Вопрос преподавателю</a>
+                        <a class="dropdown_a"href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                            {{ __('Выйти') }}
+                        </a>
+                        <a class="mobile_on" href="{{ route('about') }}"> Информация </a>
+                        <a class="mobile_on" href="{{ route('pay') }}"> Покупка курсов</a>
 
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('profile') }}"> Профиль</a>>
-                                    <a class="dropdown-item" href="{{ route('chats') }}"> Вопрос преподавателю</a>>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Выйти') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                                
-                            </li>
-                        @endguest
-               </ul>
-
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </div>
+                </div>
+                @endguest
         </nav>
 
         <main class="py-4">
