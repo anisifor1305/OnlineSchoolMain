@@ -11,8 +11,10 @@ use App\Http\Controllers\RegistrationController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\LessonController;
 use App\Http\Controllers\ReplyController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\VideoController;
 use App\Http\Middleware\isAdmin;
 use App\Http\Middleware\isAuthed;
 use App\Models\Advert;
@@ -35,6 +37,8 @@ Route::get('/howpage', [HowPageController::class, 'index'])->middleware(isAuthed
 Route::get('/profile', [UserController::class, 'personalProfile'])->middleware(isAuthed::class)->name('profile');
 Route::post('/banuser', [UserController::class, 'banUser'])->middleware(isAdmin::class);
 Route::post('/unbanuser', [UserController::class, 'unbanUser'])->middleware(isAdmin::class);
+Route::get('/upload', [VideoController::class, 'index'])->middleware(isAdmin::class);
+Route::post('/upload', [VideoController::class, 'upload'])->middleware(isAdmin::class);
 Route::get('/banned', function () {
    return view('banned') ;
 });
@@ -52,3 +56,5 @@ Route::get('/about', function(){
 Route::get('/pay', function(){
     return view('defaultError');
 })->name('pay');
+Route::get('/lesson/{id}', [LessonController::class, 'index'])->middleware(isAuthed::class);
+
