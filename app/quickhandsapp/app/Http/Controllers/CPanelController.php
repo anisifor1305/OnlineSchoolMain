@@ -37,5 +37,6 @@ class CPanelController extends Controller
             $user->steps = $arrSteps;
         }
         $user->save();
+    return redirect('/cpanel');
     }
 }

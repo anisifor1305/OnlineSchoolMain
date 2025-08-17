@@ -1,10 +1,7 @@
 <?php
 
-use App\Http\Controllers\AdvController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CPanelController;
-use App\Http\Controllers\EmployerController;
-use App\Http\Controllers\FLPubController;
 use App\Http\Controllers\HowPageController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RegistrationController;
@@ -12,12 +9,10 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\LessonController;
-use App\Http\Controllers\ReplyController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VideoController;
 use App\Http\Middleware\isAdmin;
 use App\Http\Middleware\isAuthed;
-use App\Models\Advert;
 use Illuminate\Support\Facades\Route;
 
 

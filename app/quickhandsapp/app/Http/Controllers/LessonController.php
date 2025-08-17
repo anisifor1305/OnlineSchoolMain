@@ -13,10 +13,16 @@ class LessonController extends Controller
         $courseId = $id[0];
         $videoStep = (int)substr($id, 1);
         $video = Video::where('course_id', $courseId)->where('step',$videoStep)->first();
-        $videoLink = $video->link;
-        $videoLore = $video->lore;
-        $steps = json_decode(Course::where('id', $courseId)->first()->steps);
-        $stepName = $steps[$videoStep-1];
-        return view('lesson', ['link'=>$videoLink, 'lore'=>$videoLore, 'name'=>$stepName, 'courseId'=>$courseId, 'videoStep'=>$videoStep]);
+        if($video){
+               $videoLink = $video->link;
+            $videoLore = $video->lore;
+            $steps = json_decode(Course::where('id', $courseId)->first()->steps);
+            $stepName = $steps[$videoStep-1];
+            return view('lesson', ['link'=>$videoLink, 'lore'=>$videoLore, 'name'=>$stepName, 'courseId'=>$courseId, 'videoStep'=>$videoStep, 'videoNames'=>json_encode($steps)]);
+        }
+        else{
+            return view('accessError');
+        }
+    
     }
 }

@@ -4,6 +4,7 @@ import '../../css/app.css';
 import ChatBox from "./ChatBox.jsx";
 import HomePage from './HomePage.jsx';
 import Profile from './Profile.jsx';
+import Lesson from './Lesson.jsx';
 if (document.getElementById('main')) {
     const rootUrl = "http://127.0.0.1:8000"; 
 
@@ -31,6 +32,16 @@ if (document.getElementById('main-profile')) {
         ReactDOM.createRoot(document.getElementById('main-profile')).render(
         <React.StrictMode>
             <Profile stepNumbers={component.getAttribute('stepNumbers')} coursesInfo={component.getAttribute('coursesinfo')}/>
+        </React.StrictMode>
+    );
+}
+
+if (document.getElementById('main-lesson')) {
+    const component = document.getElementById('main-lesson');
+    const props = Object.assign({}, component.dataset);
+    ReactDOM.createRoot(document.getElementById('main-lesson')).render(
+        <React.StrictMode>
+            <Lesson name={component.getAttribute('name')} courseId={component.getAttribute('courseId')} link={component.getAttribute('link')} videoStep={component.getAttribute('videoStep')} videoNames={component.getAttribute('videoNames')} />
         </React.StrictMode>
     );
 }

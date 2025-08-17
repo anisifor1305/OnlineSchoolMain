@@ -17,6 +17,7 @@ function CourseBlock({coursesInfo, stepNumbers}) {
     }
     let id =0;
     const listCourses = arrOfCourses.map((course)=>
+        <a href={"/lesson/" + course[0]+stepNumbers[course[0]]}>
         <div className="course-block" id={course[0]}>
         <h2 className="title">{course[1]}</h2>
         <p className="description">{course[2]}</p>
@@ -25,7 +26,8 @@ function CourseBlock({coursesInfo, stepNumbers}) {
                 <StepsBlock steps={course[3]} stepNumber={stepNumbers[course[0]]} courseId={id++}/>
             </div>
         </div>
-    </div>)
+    </div>
+    </a>)
     return <div>{listCourses}</div>;
     
     // return(<>hello</>);

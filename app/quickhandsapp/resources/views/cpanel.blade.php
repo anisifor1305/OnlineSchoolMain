@@ -9,7 +9,7 @@
 <body>
 <div class="container">
     <h1>Панель модератора</h1>
-    <a href="/setcourse">Установка курса со степом 2</a>
+    <a href="/setcourse/1">Установка курса со степом 2</a>
     <h1>Забанить пользователя</h1>
     <form action="/banuser" method="post">
         @csrf
