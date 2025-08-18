@@ -7,6 +7,7 @@ use App\Models\Advert;
 use App\Models\Course;
 use App\Models\FLPub;
 use App\Models\User;
+use Exception;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -36,15 +37,26 @@ class UserController extends Controller
         if ($courses){
             foreach ($courses as $course) {
                 $currentCourse = Course::where('id', $course)->first();
-                $courseInfo = array();
-                array_push($courseInfo, $currentCourse->id);
-                array_push($courseInfo, $currentCourse->name);
-                array_push($courseInfo, $currentCourse->lore);
-                array_push($courseInfo, $currentCourse->steps);
-                array_push($coursesInfo, $courseInfo);
+                try{
+                    if ($currentCourse){
+                        $courseInfo = array();
+                        array_push($courseInfo, $currentCourse->id);
+                        array_push($courseInfo, $currentCourse->name);
+                        array_push($courseInfo, $currentCourse->lore);
+                        array_push($courseInfo, $currentCourse->steps);
+                        array_push($coursesInfo, $courseInfo);
+                    } else{
+                        continue;
+                    }
+                } catch (Exception $e){
+                    return view('starwarsError', ['exception'=>$e]);
+                }
             }
         }
         else {
+            $coursesInfo = null;
+        }
+        if ($coursesInfo==[]){
             $coursesInfo = null;
         }
         $steps = $user->steps;

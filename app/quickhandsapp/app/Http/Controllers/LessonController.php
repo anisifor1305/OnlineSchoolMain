@@ -14,7 +14,7 @@ class LessonController extends Controller
         $videoStep = (int)substr($id, 1);
         $video = Video::where('course_id', $courseId)->where('step',$videoStep)->first();
         if($video){
-               $videoLink = $video->link;
+            $videoLink = $video->link;
             $videoLore = $video->lore;
             $steps = json_decode(Course::where('id', $courseId)->first()->steps);
             $stepName = $steps[$videoStep-1];

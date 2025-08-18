@@ -1,84 +1,158 @@
-/* CPanel OnlineSchool */
+/* Общий сброс стилей */
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #fafafa;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
     color: #333;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    line-height: 1.6;
 }
 
 .container {
-    max-width: 600px;
-    width: 100%;
+    max-width: 80%;
+    margin: auto;
+    overflow: hidden;
     padding: 2rem;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
-h1, h2 {
+h1 {
     text-align: center;
-    margin-bottom: 1.5rem;
-    color: #4caf50;
-}
-
-form {
-    display: grid;
-    gap: 1rem;
-}
-
-label {
-    font-weight: bold;
-}
-
-input[type="number"],
-input[type="text"] {
-    padding: 0.75rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    transition: all 0.3s ease-in-out;
-}
-
-input[type="number"]:focus,
-input[type="text"]:focus {
-    outline: none;
-    border-color: #4caf50;
-    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
-}
-
-button[type="submit"] {
-    background-color: #4caf50;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
-
-button[type="submit"]:hover {
-    background-color: #3d8b3d;
+    color: #4d4d4d;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
 }
 
 a {
     display: block;
+    width: fit-content;
+    margin: 0 auto;
+    padding: .8em 1.5em;
     text-decoration: none;
-    color: #4caf50;
-    font-size: 1.125rem;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 1.5rem;
+    color: white;
+    background-color: #839eff;
     transition: all 0.3s ease-in-out;
+    border-radius: 5px;
 }
 
 a:hover {
-    color: #3d8b3d;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+}
+
+form {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    justify-items: start;
+    align-items: center;
+    gap: 4vw;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+}
+
+.course_place {
+    display: flex;
+    justify-content: space-between;
+    gap: 8%;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+}
+
+.course_place__left {
+    width: 46%;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+}
+.course_place__right {
+    width: 46%;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+}
+
+.maintype_cont{
+    border-radius: 5px;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+}
+
+
+.notcenter{
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+.video_block{
+    width: 100%;
+    display: flex;
+    align-items: space-between;
+    gap: 50px;
+}
+label {
+    font-weight: bold;
+    color: #4d4d4d;
+}
+
+input[type="number"],
+input[type="text"] {
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus {
+    border-color: #3cba54;
+}
+
+button {
+    cursor: pointer;
+    padding: 0.8em 1.5em;
+    background-color: #839eff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+}
+.grey_bgc{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: #e8e8e8;
 }

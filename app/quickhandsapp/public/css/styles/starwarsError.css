@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Star+Jedi+Title&display=swap');
+
+.star-wars-style {
+    background-image: url('/images/starspace.jpg');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: yellow;
+    font-family: 'Star Jedi Title', cursive;
+}
+
+#content {
+    p{
+        text-align: justify;
+        word-wrap:break-word
+
+    }
+    width: 40vw;
+    position: absolute;
+    top: 50%;
+    /* left: 50%; */
+    transform: translate(-50%, -50%);
+    text-align: center;
+    line-height: 1.5em;
+    letter-spacing: 2px;
+    animation: scrollText 30s linear infinite;
+}
+
+@keyframes scrollText {
+    from {transform: translateY(0);}
+    to   {transform: translateY(-100%);}
+}
+
+a {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    background-color: #FFD700;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+    background-color: #FFA500;
+}

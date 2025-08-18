@@ -3,14 +3,46 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Course;
 use App\Models\User;
+use App\Models\Video;
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
+use RecursiveDirectoryIterator;
+use RecursiveIteratorIterator;
+use RecursiveCallbackFilterIterator;
 
 class CPanelController extends Controller
 {
     function index() {
         if (  $user = User::where('id', auth()->id())->first()->is_admin){
-            return view('cpanel');
+            $dirPath = storage_path('app/private');
+            $videoExtensions = ['mp4', 'mkv', 'avi'];
+            
+            $iterator = new RecursiveDirectoryIterator($dirPath);
+            $filteredIterator = new RecursiveCallbackFilterIterator(
+                $iterator,
+                function ($current, $key, $iterator) use ($videoExtensions) {
+                    if ($current->isDir()) return true;
+                    
+                    $extension = pathinfo($current->getFilename(), PATHINFO_EXTENSION);
+                    return in_array(strtolower($extension), $videoExtensions);
+                }
+            );
+            
+            $videoFiles = [];
+            foreach(new RecursiveIteratorIterator($filteredIterator) as $fileInfo) {
+                $videoFiles[] = [
+                    'name' => $fileInfo->getBasename(),
+                    'path' => $fileInfo->getRealPath()
+                ];
+            }
+            $videoFiles = array_slice($videoFiles, 4);
+            $courses = Course::all();
+            $videos = Video::all();
+            $directory = storage_path('app/public/videos');
+            $videospath = File::files($directory);
+            return view('cpanel', ['courses'=>$courses, 'videos'=>$videos, 'videospath'=>$videospath, 'videoFiles'=>$videoFiles]);
         }
         else{
             return view('accessError');
@@ -18,25 +50,26 @@ class CPanelController extends Controller
     }
     function setCourse(string $id) {
         $user = User::where('id', auth()->id())->first();
-        $id = $id; //Мб аргументом
         $courses = $user->courses;
         $steps = $user->steps;
-        if ($courses && $steps){
+        if (!$courses || !$steps){
+            $arrCourses = array();
+            array_push($arrCourses, $id);
+            $arrSteps = array();
+            $arrSteps[$id]='1';
+            $user->courses = $arrCourses;
+            $user->steps = $arrSteps;
+            $user->save();
+            return redirect('/cpanel');
+        } else {
             $arrCourses = json_decode($courses, true);
             array_push($arrCourses, $id);
             $arrSteps = json_decode($steps, true);
-            $arrSteps[$id]='2';
+            $arrSteps[$id]='1';
             $user->courses = $arrCourses;
             $user->steps = $arrSteps;
-        } else{
-            $arrCourses = [];
-            array_push($arrCourses, $id);
-            $arrSteos = array();
-            $arrSteps[$id]='2';
-            $user->courses = $arrCourses;
-            $user->steps = $arrSteps;
+            $user->save();
+            return redirect('/cpanel');
         }
-        $user->save();
-    return redirect('/cpanel');
     }
 }

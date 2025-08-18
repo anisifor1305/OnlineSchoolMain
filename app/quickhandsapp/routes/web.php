@@ -44,7 +44,7 @@ Route::get('/messages/{id}', [ChatController::class, 'messages'])
 Route::post('/message/{id}', [ChatController::class, 'message'])
     ->name('message')->middleware(isAuthed::class);
 Route::post('/newcourse', [CourseController::class, 'newCourse'])->middleware(isAuthed::class);
-Route::get('/setcourse/{id}', [App\Http\Controllers\CPanelController::class, 'setCourse'])->middleware(isAuthed::class);
+Route::get('/setcourse/{id}', [App\Http\Controllers\CPanelController::class, 'setCourse'])->middleware(isAdmin::class);
 Route::get('/about', function(){
     return view('about');
 })->name('about');
@@ -52,4 +52,8 @@ Route::get('/pay', function(){
     return view('defaultError');
 })->name('pay');
 Route::get('/lesson/{id}', [LessonController::class, 'index'])->middleware(isAuthed::class);
-
+Route::get('/deletecourse/{id}', [CourseController::class, 'deleteCourse'])->middleware(isAdmin::class);
+Route::get('/makelink', [VideoController::class, 'makeLinkIndex'])->middleware(isAdmin::class);
+Route::post('/makelink', [VideoController::class, 'makeLink'])->middleware(isAdmin::class);
+Route::get('/video/{video}', [VideoController::class, 'show'])->middleware(isAuthed::class);
+Route::get('/removevideo/{videoName}', [VideoController::class, 'removeVideo'])->middleware(isAdmin::class);
