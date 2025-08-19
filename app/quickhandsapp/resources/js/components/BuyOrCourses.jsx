@@ -5,7 +5,7 @@ function BuyOrCourses({isBought, coursesInfo, stepNumbers}) {
         return(<CourseBlock coursesInfo={coursesInfo} stepNumbers={stepNumbers}/>);
     }
     else{
-        return(<div>Ниче не куплено, нужна соотв. страница.</div>);
+        return(<div className='nothingBought'>На данный момент не куплено ни одного курса.</div>);
     }
 }
 

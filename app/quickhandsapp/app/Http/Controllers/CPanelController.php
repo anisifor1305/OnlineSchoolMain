@@ -52,19 +52,19 @@ class CPanelController extends Controller
         $user = User::where('id', auth()->id())->first();
         $courses = $user->courses;
         $steps = $user->steps;
-        if (!$courses || !$steps){
-            $arrCourses = array();
+        if ($courses!=null){
+            $arrCourses = json_decode($courses, true);
             array_push($arrCourses, $id);
-            $arrSteps = array();
+            $arrSteps = json_decode($steps, true);
             $arrSteps[$id]='1';
             $user->courses = $arrCourses;
             $user->steps = $arrSteps;
             $user->save();
             return redirect('/cpanel');
         } else {
-            $arrCourses = json_decode($courses, true);
+            $arrCourses = array();
             array_push($arrCourses, $id);
-            $arrSteps = json_decode($steps, true);
+            $arrSteps = array();
             $arrSteps[$id]='1';
             $user->courses = $arrCourses;
             $user->steps = $arrSteps;

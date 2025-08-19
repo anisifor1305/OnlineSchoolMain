@@ -1,5 +1,8 @@
 body, html {
     overflow-x: hidden; /* Убираем горизонтальную прокрутку */
+    font-family: "Onest", sans-serif;
+    color: #333;
+    background-color: #fafafa;
 }
 
 .header {

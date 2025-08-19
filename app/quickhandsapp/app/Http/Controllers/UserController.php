@@ -30,38 +30,43 @@ class UserController extends Controller
     }
     function personalProfile() {
         $user = User::where('id', auth()->id())->first();
-        $firstname = $user->firstname;
-        $lastname = $user->lastname;
-        $courses = json_decode($user->courses);
-        $coursesInfo = [];
-        if ($courses){
-            foreach ($courses as $course) {
-                $currentCourse = Course::where('id', $course)->first();
-                try{
-                    if ($currentCourse){
-                        $courseInfo = array();
-                        array_push($courseInfo, $currentCourse->id);
-                        array_push($courseInfo, $currentCourse->name);
-                        array_push($courseInfo, $currentCourse->lore);
-                        array_push($courseInfo, $currentCourse->steps);
-                        array_push($coursesInfo, $courseInfo);
-                    } else{
-                        continue;
+        if ($user){
+            $firstname = $user->firstname;
+            $lastname = $user->lastname;
+            $steps = $user->steps;
+            $email = $user->email;
+            $courses = json_decode($user->courses);
+            $coursesInfo = [];
+            if ($courses){
+                foreach ($courses as $course) {
+                    $currentCourse = Course::where('id', $course)->first();
+                    try{
+                        if ($currentCourse){
+                            $courseInfo = array();
+                            array_push($courseInfo, $currentCourse->id);
+                            array_push($courseInfo, $currentCourse->name);
+                            array_push($courseInfo, $currentCourse->lore);
+                            array_push($courseInfo, $currentCourse->steps);
+                            array_push($coursesInfo, $courseInfo);
+                        } else{
+                            continue;
+                        }
+                    } catch (Exception $e){
+                        return view('starwarsError', ['exception'=>$e]);
                     }
-                } catch (Exception $e){
-                    return view('starwarsError', ['exception'=>$e]);
                 }
             }
+            else {
+                $coursesInfo = null;
+            }
+            if ($coursesInfo==[]){
+                $coursesInfo = null;
+            }
+            $coursesInfo = json_encode($coursesInfo);
+            return view('personalProfile', ['firstname'=>$firstname, 'lastname'=>$lastname, 'steps'=>$steps, 'coursesInfo'=>$coursesInfo, 'email'=>$email]);
+        } else{
+            return view('starwarsError', ['exception'=> new Exception('error')]);
         }
-        else {
-            $coursesInfo = null;
-        }
-        if ($coursesInfo==[]){
-            $coursesInfo = null;
-        }
-        $steps = $user->steps;
-        $coursesInfo = json_encode($coursesInfo);
-        return view('personalProfile', ['firstname'=>$firstname, 'lastname'=>$lastname, 'steps'=>$steps, 'coursesInfo'=>$coursesInfo]);
 
     }
     function banUser(Request $request) {

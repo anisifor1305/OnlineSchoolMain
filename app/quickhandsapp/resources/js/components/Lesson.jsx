@@ -19,7 +19,7 @@ function Lesson(props) {
                 </div>
                 <div className="videoblock_c">
                     <div className="videotext_c">Урок {props.videoStep}. {props.name}</div>
-                    <div ><iframe className="video_c" src={props.link} frameBorder="0" allow="clipboard-write" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+                    <div ><iframe className="video_c" src={props.link} frameBorder="0" allow="clipboard-write" webkitAllowFullScreen mozallowfullscreen allowFullScreen loading="lazy"></iframe></div>
                     <div>
                         <div className="commenttext_c">Написать вопрос преподавателю:</div>
                         <div className="text-field_c">

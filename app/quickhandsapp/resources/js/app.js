@@ -13,5 +13,5 @@
  */
 
 // import './components/Example';
-import './bootstrap';
+// import './bootstrap';
 import './components/Main.jsx';

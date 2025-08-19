@@ -12,10 +12,39 @@ body {
     height: 100vh;
 }
 
+.message_right{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+.message_left{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+}
+
+.msg_right{
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 7px;
+    width: 60%;
+    color: rgb(0,0,0);
+    background-color: aliceblue;
+}
+.msg_left{
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 7px;
+    width: 60%;
+    color: aliceblue;
+    background-color: #8d46f6;
+}
+
 .card {
     width: 100%;
     max-width: 700px;
-    border-radius: 12px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out;
     position: relative;
@@ -29,8 +58,6 @@ body {
     font-size: 1.2rem;
     text-align: left;
     padding: 16px 24px;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     letter-spacing: 0.5px;
@@ -121,7 +148,7 @@ input[type='text'] {
     border-radius: 8px;
     background-color: #fafafa;
     color: #333;
-    transition: background-color 0.3s ease-in-out;
+    transition: all 0.3s;
 }
 
 input[type='text']:focus {
@@ -132,13 +159,21 @@ button {
     cursor: pointer;
     padding: 12px 24px;
     font-size: 1rem;
-    border: none;
+    border: 2px solid transparent;
     border-radius: 8px;
-    background-color: #4a90e2;
+    background-color: #8d46f6;
     color: #fff;
-    transition: background-color 0.3s ease-in-out;
+    transition: all 0.3s;
 }
 
 button:hover {
-    background-color: #3b7dda;
+    color: #8d46f6;
+    border: 2px solid #8d46f6;
+    background-color: aliceblue;
+}
+
+.message_form{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }

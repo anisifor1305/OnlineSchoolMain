@@ -7,25 +7,17 @@
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/styles/BEM blocks/header/header.css')}}">
-    <link rel="stylesheet" href="{{ asset('css/styles/styles_i.css')}}">
-    <link rel="stylesheet" href="{{ asset('css/styles/styles_p.css')}}">
     <link rel="stylesheet" href="{{ asset('css/styles/BEM blocks/primary-font/primary-font.css')}}">
-    <link rel="stylesheet" href="{{ asset('css/styles/banner.css')}}">
-    <link rel="stylesheet" href="{{ asset('css/styles/BEM blocks/footer/footer.css')}}">
-    <!-- Используем современный шрифт -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet"> 
-    <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
-    <!-- Scripts -->
     @viteReactRefresh
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
@@ -40,7 +32,6 @@
                     <p class="logo__text" href="/about"> физика <br> - это просто </p>
                 </a>
                 </div>
-                <!-- <div class="header__panel-block-btn"><a class="header__panel-btn primary-font mobile-none" href="/about"> О нас </a></div> -->
                 <div class="header__panel-block-btn"><a class="header__panel-btn primary-font mobile-none" href="/pay">Купить курс </a></div>
                 <div class="header__panel-block-btn"><a class="header__panel-btn primary-font mobile-none" href="/about"> Информация </a></div>
                 @guest
@@ -56,7 +47,7 @@
                     <a class="header__panel-btn primary-font">{{ Auth::user()->firstname }} <img class="burger" src="{{ asset('images/hamburger-menu.svg')}}" alt="" height="30" width="30"> </a>
                     <div class="dropdown-content">
                         <a class="dropdown_a"href="{{ route('profile') }}"> Профиль</a>
-                        <a class="dropdown_a"href="{{ route('chats') }}"> Вопрос преподавателю</a>
+                        <a class="dropdown_a"href="/chats/1"> Вопрос преподавателю</a>
                         <a class="dropdown_a"href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">
