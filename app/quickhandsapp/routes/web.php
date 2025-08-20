@@ -49,7 +49,7 @@ Route::get('/about', function(){
     return view('about');
 })->name('about');
 Route::get('/pay', function(){
-    return view('defaultError');
+    return view('payment');
 })->name('pay');
 Route::get('/lesson/{id}', [LessonController::class, 'index'])->middleware(isAuthed::class);
 Route::get('/deletecourse/{id}', [CourseController::class, 'deleteCourse'])->middleware(isAdmin::class);

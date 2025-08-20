@@ -1,0 +1,114 @@
+*{
+    font-family: "Onest", sans-serif;
+}
+.toptextcontainer_payment {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.divive{
+    margin-left: 5px;
+}
+
+.toptext_payment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+    width: 80vw;
+    /* height: 10vw; */
+    border-radius: 2vw;
+    border-bottom: 4px solid #8d46f6;
+    font-size: 4vw;
+    font-weight: 500;
+    background-color: #fafafa;
+    color: rgb(67, 67, 67);
+}
+
+.row_payment {
+    gap: 2vw;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
+
+.coursebuttonref_payment {
+    width: 25vw;
+    height: auto;
+    border: 2px solid transparent;
+    border-radius: 1rem;
+    border-style: solid;
+    background-color: rgb(246, 246, 246);
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.coursebuttonref_payment:hover {
+    text-decoration: none;
+    background-color: white;
+    box-shadow: 0px 0px 10px 5px #8d46f6;
+}
+
+.coursebutton_payment {
+    display: flex;
+    flex-direction: column;
+}
+
+.imgblock_payment {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.cbimage_payment {
+    display: flex;
+    margin-top: 5%;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+    width: 90%;
+    height: auto;
+    border-radius: 0.7vw;
+    z-index: 0;
+}
+
+.coursenumber_payment {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 1vw;
+    margin-left: 0.5vw;
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgb(75, 75, 75);
+    z-index: 0;
+}
+
+.coursecost_payment {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 1vw;
+    margin-left: 0.5vw;
+    margin-bottom: 1vw;
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgb(75, 75, 75);
+    z-index: 0;
+}
+
+.oldprice_payment {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 0.5vw;
+    margin-left: 0.5vw;
+    margin-bottom: 1vw;
+    text-decoration: line-through;
+    text-decoration-color: #ff0000;
+    font-size: 1rem;
+    font-weight: 100;
+    color: rgb(75, 75, 75);
+    z-index: 0;
+}

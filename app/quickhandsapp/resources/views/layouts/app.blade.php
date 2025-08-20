@@ -8,6 +8,7 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/styles/BEM blocks/header/header.css')}}">
     <link rel="stylesheet" href="{{ asset('css/styles/BEM blocks/primary-font/primary-font.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/styles/BEM blocks/footer/footer.css')}}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet"> 
@@ -27,9 +28,11 @@
             <div class="header__panel-main header__panel-main--mid">
                 <div class="header__panel-block-btn">
                 <a class="header__panel-btn__logo" href="/"> 
-                    <img  src="{{ asset('images/logo.jpg')}}" alt="" height="30" width="30"> 
+                    <img class="jet_logo" src="{{ asset('images/logo_without_text.svg')}}" alt=""> 
+                    <img class="jet" src="{{ asset('images/only_text.svg')}}" alt=""> 
+                    <!-- <img  src="{{ asset('images/logo.jpg')}}" alt="" height="30" width="30"> 
                     <img  src="{{ asset('images/line.svg')}}" alt="" height="30" width="30"> 
-                    <p class="logo__text" href="/about"> физика <br> - это просто </p>
+                    <p class="logo__text" href="/about"> физика <br> - это просто </p> -->
                 </a>
                 </div>
                 <div class="header__panel-block-btn"><a class="header__panel-btn primary-font mobile-none" href="/pay">Купить курс </a></div>

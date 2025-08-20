@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Course;
 use App\Models\User;
 use App\Models\Video;
+use Exception;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use RecursiveDirectoryIterator;
@@ -54,12 +55,17 @@ class CPanelController extends Controller
         $steps = $user->steps;
         if ($courses!=null){
             $arrCourses = json_decode($courses, true);
+            foreach ($arrCourses as $course) {
+                if($course==$id){
+                    return view('starwarsError', ['exception'=>new Exception('error')]);
+                }
+            }
             array_push($arrCourses, $id);
             $arrSteps = json_decode($steps, true);
             $arrSteps[$id]='1';
             $user->courses = $arrCourses;
             $user->steps = $arrSteps;
-            $user->save();
+            $user->save();  
             return redirect('/cpanel');
         } else {
             $arrCourses = array();

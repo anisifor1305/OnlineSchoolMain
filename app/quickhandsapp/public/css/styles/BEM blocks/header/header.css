@@ -4,7 +4,15 @@ body, html {
     color: #333;
     background-color: #fafafa;
 }
-
+.jet{
+    margin-left: 15px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    height: 30px;
+}
+.jet_logo{
+    height: 30px;
+}
 .header {
     display: flex;
     justify-content: space-between;
