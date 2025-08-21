@@ -5,14 +5,14 @@
     <link rel="stylesheet" href="{{ asset('css/styles/styles_payment.css')}}">
 </head>
 <body>
-     <div>
+     <div class="container">
         <div class="toptextcontainer_payment">
             <div class="toptext_payment">
                 Купите мой курс, и все будет хорошо.
             </div>
         </div>
         <div class="row_payment">
-            <a class="coursebuttonref_payment" href="#">
+            <a class="coursebuttonref_payment" href="/setcourse/1">
                 <div class="coursebutton_payment">
                     <div class="imgblock_payment">
                         <img class="cbimage_payment" src="./images/bannerstyle/bg.png" alt="">
@@ -21,7 +21,7 @@
                     <div class="coursecost_payment">1<div class='divive'>950₽</div></div>
                 </div>
             </a>
-            <a class="coursebuttonref_payment" href="#">
+            <a class="coursebuttonref_payment" href="/setcourse/1">
                 <div class="coursebutton_payment">
                     <div class="imgblock_payment">
                         <img class="cbimage_payment" src="./images/bannerstyle/bg.png" alt="">

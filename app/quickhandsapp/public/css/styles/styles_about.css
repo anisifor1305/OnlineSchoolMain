@@ -117,6 +117,9 @@ body {
 
 /* Адаптация для смартфонов */
 @media (max-width: 767px) {
+    .maintitle{
+        width: 92vw;
+    }
     .navbar {
         flex-direction: column;
         align-items: center;

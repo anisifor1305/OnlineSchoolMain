@@ -296,7 +296,7 @@ body, html {
     white-space: nowrap;
     overflow: hidden;
     margin-top: 10px;
-    z-index: 1;
+    z-index: 3;
 }
 
 .dropdown_a {

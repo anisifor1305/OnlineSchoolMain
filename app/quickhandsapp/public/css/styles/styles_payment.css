@@ -1,6 +1,10 @@
 *{
     font-family: "Onest", sans-serif;
 }
+
+/* .container{
+    height:calc(100vh - 55px);
+} */
 .toptextcontainer_payment {
     display: flex;
     justify-content: center;
@@ -14,19 +18,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     margin-top: 5vw;
     margin-bottom: 5vw;
     width: 80vw;
     /* height: 10vw; */
     border-radius: 2vw;
     border-bottom: 4px solid #8d46f6;
-    font-size: 4vw;
+    font-size: 4rem;
     font-weight: 500;
     background-color: #fafafa;
     color: rgb(67, 67, 67);
 }
 
 .row_payment {
+    margin-bottom: 20vh;
     gap: 2vw;
     display: flex;
     flex-direction: row;
@@ -111,4 +117,18 @@
     font-weight: 100;
     color: rgb(75, 75, 75);
     z-index: 0;
+}
+
+@media (max-width: 800px) {
+
+    .toptext_payment{
+        font-size: 1rem;
+    }
+    .row_payment{
+        align-items: center;
+        flex-direction: column;
+    }
+    .coursebuttonref_payment{
+        width: 80vw;
+    }
 }
